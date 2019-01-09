@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+using namespace std;
+bool compare(const pair<int,string> &a,const pair<int,string> &b)
+{
+    if(a.first == b.first)
+    {
+        return (a.second>b.second);
+    }
+    else if(a.first < b.first)
+    return true;
+    else
+    return false;
+}
+vector<pair<int,string>>vect;
+int main()
+{
+    int i , n , t, m, x, y ;
+    cin>>n>>t;
+    string s,a;
+    for(i=0 ; i<n ;i++)
+    {
+        cin>>s>>m;
+        vect.push_back(make_pair(m,s));
+    }
+    sort(vect.begin(),vect.end(),compare);
+    int z=n-1;
+    while(t--)
+    {
+      cout<<vect[z].second<<endl;
+      z--;
+    }
+    
+    return 0;
+}
